@@ -1,6 +1,6 @@
 """
 FastBox Delivery System — Test Case Runner
-==========================================
+
 Runs all test cases from the test_cases/ folder automatically.
 
 For each test case, outputs are saved to:

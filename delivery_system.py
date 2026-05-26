@@ -1,22 +1,7 @@
 """
 FastBox Delivery System Simulator
-==================================
+
 Simulates one day of operations for the fictional logistics company FastBox.
-
-Bonus features included:
-  1. Export top performer to CSV
-  2. Random delivery delays
-  3. Visualize routes in ASCII
-  4. Handle new agent joining mid-day
-
-Assumptions:
-  - Input JSON supports two formats (dict-style and list-style); both are handled.
-  - Each package is assigned to the nearest agent by Euclidean distance (agent → warehouse).
-  - An agent visits each warehouse once, picks up all packages there, then delivers each.
-  - Efficiency = total_distance / packages_delivered (lower is better).
-  - Delay: each delivery leg has a DELAY_CHANCE probability of a 1–10 min delay.
-  - Mid-day join: new agent takes over packages from the 2nd warehouse stop onward
-    of each original agent, but only if the new agent is closer to that warehouse.
 """
 
 import json
@@ -29,11 +14,11 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 # Configuration  —  edit these to change behaviour
 # ---------------------------------------------------------------------------
-OUTPUT_DIR  = "output_base_case"
+OUTPUT_DIR  = "output_base_case"                # output folder
 Path(OUTPUT_DIR).mkdir(parents=True, exist_ok=True)
 
-INPUT_FILE   = f"base_case.json"  # path to input JSON
-OUTPUT_FILE  = f"{OUTPUT_DIR}/report.json"     # path to output report
+INPUT_FILE   = f"base_case.json"                # path to input JSON
+OUTPUT_FILE  = f"{OUTPUT_DIR}/report.json"      # path to output report
 CSV_FILE     = f"{OUTPUT_DIR}/top_performer.csv"
 
 DELAY_CHANCE = 0.30              # probability of a delay on each delivery leg (0.0–1.0)
@@ -41,7 +26,7 @@ DELAY_MIN    = 1                 # minimum delay in minutes
 DELAY_MAX    = 10                # maximum delay in minutes
 
 # New agent joining mid day.
-# Set ENABLE_NEW_AGENT = True and fill in the details below to activate.
+# Set ENABLE_NEW_AGENT = True and fill in the details below to activate => (Readme.md)
 ENABLE_NEW_AGENT = False
 NEW_AGENT_ID     = "A_NEW"
 NEW_AGENT_POS    = [45, 45]      # starting position of the new agent
@@ -61,12 +46,7 @@ def euclidean(p1: list, p2: list) -> float:
 # ---------------------------------------------------------------------------
 
 def normalise_input(data: dict) -> tuple[dict, dict, list]:
-    """
-    Accepts both input formats and returns:
-      warehouses -> {id: [x, y]}
-      agents     -> {id: [x, y]}
-      packages   -> [{"id": str, "warehouse_id": str, "destination": [x, y]}]
-    """
+
     raw_wh = data["warehouses"]
     if isinstance(raw_wh, dict):
         warehouses = {k: list(v) for k, v in raw_wh.items()}
@@ -112,7 +92,7 @@ def assign_packages(warehouses: dict, agents: dict, packages: list) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Bonus 4 — New agent joining mid-day
+# New agent joining mid-day
 # ---------------------------------------------------------------------------
 
 def join_agent(new_id: str, new_pos: list,
@@ -139,7 +119,6 @@ def join_agent(new_id: str, new_pos: list,
         keep      = assignment[aid][:1]
         candidates = assignment[aid][1:]
 
-        # Original agent's approximate mid-day position: their first warehouse
         midday_pos = warehouses[keep[0]["warehouse_id"]]
 
         stay    = []
@@ -162,7 +141,7 @@ def join_agent(new_id: str, new_pos: list,
 
 
 # ---------------------------------------------------------------------------
-# Bonus 2 — Random delivery delay
+# Random delivery delay
 # ---------------------------------------------------------------------------
 
 def maybe_delay() -> int:
@@ -180,7 +159,6 @@ def simulate_agent(agent_id: str, start: list, packages: list,
                    warehouses: dict) -> tuple[float, list, list, int]:
     """
     Simulate one agent's delivery route.
-
     Returns:
       total_distance   : float
       delivered_ids    : [package_id, ...]
@@ -212,7 +190,7 @@ def simulate_agent(agent_id: str, start: list, packages: list,
             total_distance += euclidean(position, pkg["destination"])
             position = list(pkg["destination"])
 
-            # Bonus 2: random delay
+            # random delay
             delay = maybe_delay()
             if delay:
                 total_delay += delay
@@ -226,7 +204,7 @@ def simulate_agent(agent_id: str, start: list, packages: list,
 
 
 # ---------------------------------------------------------------------------
-# Bonus 3 — ASCII visualisation
+# ASCII visualisation
 # ---------------------------------------------------------------------------
 
 def _to_grid(x, y, max_x, max_y, size):
@@ -255,7 +233,6 @@ def ascii_route_map(agent_id: str, waypoints: list,
             if grid[size - 1 - gy][gx] == '.':
                 grid[size - 1 - gy][gx] = '*'
 
-    # Draw labelled waypoints on top
     for symbol, coord in waypoints:
         gx, gy = _to_grid(coord[0], coord[1], max_x, max_y, size)
         grid[size - 1 - gy][gx] = symbol
@@ -300,7 +277,7 @@ def ascii_overview_map(warehouses: dict, agents: dict,
 
 
 # ---------------------------------------------------------------------------
-# Bonus 1 — Export top performer to CSV
+# Export top performer to CSV
 # ---------------------------------------------------------------------------
 
 def export_top_performer(report: dict):
@@ -339,7 +316,7 @@ def main():
     warehouses, agents, packages = normalise_input(data)
     assignment = assign_packages(warehouses, agents, packages)
 
-    # Bonus 4: new agent joining mid-day
+    # new agent joining mid-day
     if ENABLE_NEW_AGENT:
         agents, assignment = join_agent(
             NEW_AGENT_ID, NEW_AGENT_POS, agents, assignment, warehouses
@@ -398,7 +375,7 @@ def main():
 
     print(f"\n  Best Agent: {report['best_agent']}")
 
-    # Bonus 3: ASCII maps
+    # ASCII maps
     print("\n" + "-" * 42)
     print("  Per-Agent Route Maps")
     print("-" * 42)
@@ -410,7 +387,7 @@ def main():
     print("-" * 42)
     print("\n" + ascii_overview_map(warehouses, agents, packages))
 
-    # Bonus 1: CSV export
+    # CSV export
     export_top_performer(report)
 
 
