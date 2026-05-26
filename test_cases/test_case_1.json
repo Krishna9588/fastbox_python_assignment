@@ -1,0 +1,140 @@
+{
+    "warehouses": {
+        "W1": [
+            34,
+            29
+        ],
+        "W2": [
+            95,
+            4
+        ],
+        "W3": [
+            86,
+            21
+        ],
+        "W4": [
+            32,
+            5
+        ],
+        "W5": [
+            14,
+            12
+        ]
+    },
+    "agents": {
+        "A1": [
+            89,
+            16
+        ],
+        "A2": [
+            52,
+            21
+        ],
+        "A3": [
+            17,
+            17
+        ],
+        "A4": [
+            99,
+            83
+        ]
+    },
+    "packages": [
+        {
+            "id": "P1",
+            "warehouse": "W5",
+            "destination": [
+                12,
+                7
+            ]
+        },
+        {
+            "id": "P2",
+            "warehouse": "W2",
+            "destination": [
+                100,
+                1
+            ]
+        },
+        {
+            "id": "P3",
+            "warehouse": "W5",
+            "destination": [
+                24,
+                17
+            ]
+        },
+        {
+            "id": "P4",
+            "warehouse": "W2",
+            "destination": [
+                87,
+                14
+            ]
+        },
+        {
+            "id": "P5",
+            "warehouse": "W5",
+            "destination": [
+                6,
+                2
+            ]
+        },
+        {
+            "id": "P6",
+            "warehouse": "W3",
+            "destination": [
+                83,
+                19
+            ]
+        },
+        {
+            "id": "P7",
+            "warehouse": "W5",
+            "destination": [
+                10,
+                2
+            ]
+        },
+        {
+            "id": "P8",
+            "warehouse": "W4",
+            "destination": [
+                37,
+                13
+            ]
+        },
+        {
+            "id": "P9",
+            "warehouse": "W1",
+            "destination": [
+                44,
+                35
+            ]
+        },
+        {
+            "id": "P10",
+            "warehouse": "W2",
+            "destination": [
+                102,
+                0
+            ]
+        },
+        {
+            "id": "P11",
+            "warehouse": "W5",
+            "destination": [
+                7,
+                22
+            ]
+        },
+        {
+            "id": "P12",
+            "warehouse": "W4",
+            "destination": [
+                40,
+                8
+            ]
+        }
+    ]
+}

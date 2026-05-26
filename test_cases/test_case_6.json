@@ -1,0 +1,112 @@
+{
+    "warehouses": {
+        "W1": [
+            39,
+            17
+        ],
+        "W2": [
+            83,
+            87
+        ],
+        "W3": [
+            37,
+            56
+        ],
+        "W4": [
+            68,
+            66
+        ]
+    },
+    "agents": {
+        "A1": [
+            29,
+            63
+        ],
+        "A2": [
+            52,
+            66
+        ],
+        "A3": [
+            99,
+            72
+        ],
+        "A4": [
+            64,
+            55
+        ]
+    },
+    "packages": [
+        {
+            "id": "P1",
+            "warehouse": "W2",
+            "destination": [
+                74,
+                86
+            ]
+        },
+        {
+            "id": "P2",
+            "warehouse": "W1",
+            "destination": [
+                38,
+                7
+            ]
+        },
+        {
+            "id": "P3",
+            "warehouse": "W3",
+            "destination": [
+                45,
+                49
+            ]
+        },
+        {
+            "id": "P4",
+            "warehouse": "W1",
+            "destination": [
+                44,
+                20
+            ]
+        },
+        {
+            "id": "P5",
+            "warehouse": "W1",
+            "destination": [
+                34,
+                25
+            ]
+        },
+        {
+            "id": "P6",
+            "warehouse": "W1",
+            "destination": [
+                39,
+                14
+            ]
+        },
+        {
+            "id": "P7",
+            "warehouse": "W2",
+            "destination": [
+                78,
+                81
+            ]
+        },
+        {
+            "id": "P8",
+            "warehouse": "W2",
+            "destination": [
+                75,
+                88
+            ]
+        },
+        {
+            "id": "P9",
+            "warehouse": "W2",
+            "destination": [
+                79,
+                77
+            ]
+        }
+    ]
+}

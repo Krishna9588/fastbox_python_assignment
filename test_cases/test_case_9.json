@@ -1,0 +1,100 @@
+{
+    "warehouses": {
+        "W1": [
+            59,
+            49
+        ],
+        "W2": [
+            22,
+            64
+        ],
+        "W3": [
+            52,
+            93
+        ]
+    },
+    "agents": {
+        "A1": [
+            65,
+            77
+        ],
+        "A2": [
+            3,
+            49
+        ],
+        "A3": [
+            21,
+            54
+        ],
+        "A4": [
+            32,
+            13
+        ]
+    },
+    "packages": [
+        {
+            "id": "P1",
+            "warehouse": "W3",
+            "destination": [
+                43,
+                84
+            ]
+        },
+        {
+            "id": "P2",
+            "warehouse": "W3",
+            "destination": [
+                49,
+                95
+            ]
+        },
+        {
+            "id": "P3",
+            "warehouse": "W3",
+            "destination": [
+                55,
+                100
+            ]
+        },
+        {
+            "id": "P4",
+            "warehouse": "W1",
+            "destination": [
+                49,
+                56
+            ]
+        },
+        {
+            "id": "P5",
+            "warehouse": "W2",
+            "destination": [
+                24,
+                68
+            ]
+        },
+        {
+            "id": "P6",
+            "warehouse": "W1",
+            "destination": [
+                69,
+                54
+            ]
+        },
+        {
+            "id": "P7",
+            "warehouse": "W1",
+            "destination": [
+                54,
+                52
+            ]
+        },
+        {
+            "id": "P8",
+            "warehouse": "W2",
+            "destination": [
+                17,
+                60
+            ]
+        }
+    ]
+}

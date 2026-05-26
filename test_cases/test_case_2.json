@@ -1,0 +1,112 @@
+{
+    "warehouses": {
+        "W1": [
+            11,
+            35
+        ],
+        "W2": [
+            14,
+            40
+        ],
+        "W3": [
+            75,
+            54
+        ]
+    },
+    "agents": {
+        "A1": [
+            69,
+            36
+        ],
+        "A2": [
+            64,
+            71
+        ],
+        "A3": [
+            97,
+            58
+        ]
+    },
+    "packages": [
+        {
+            "id": "P1",
+            "warehouse": "W2",
+            "destination": [
+                22,
+                50
+            ]
+        },
+        {
+            "id": "P2",
+            "warehouse": "W2",
+            "destination": [
+                23,
+                39
+            ]
+        },
+        {
+            "id": "P3",
+            "warehouse": "W1",
+            "destination": [
+                13,
+                44
+            ]
+        },
+        {
+            "id": "P4",
+            "warehouse": "W1",
+            "destination": [
+                12,
+                27
+            ]
+        },
+        {
+            "id": "P5",
+            "warehouse": "W3",
+            "destination": [
+                83,
+                63
+            ]
+        },
+        {
+            "id": "P6",
+            "warehouse": "W1",
+            "destination": [
+                17,
+                42
+            ]
+        },
+        {
+            "id": "P7",
+            "warehouse": "W3",
+            "destination": [
+                69,
+                61
+            ]
+        },
+        {
+            "id": "P8",
+            "warehouse": "W2",
+            "destination": [
+                4,
+                49
+            ]
+        },
+        {
+            "id": "P9",
+            "warehouse": "W1",
+            "destination": [
+                10,
+                30
+            ]
+        },
+        {
+            "id": "P10",
+            "warehouse": "W3",
+            "destination": [
+                79,
+                60
+            ]
+        }
+    ]
+}

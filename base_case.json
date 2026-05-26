@@ -1,0 +1,20 @@
+{
+  "warehouses": [
+    {"id": "W1", "location": [0, 0]},
+    {"id": "W2", "location": [50, 75]},
+    {"id": "W3", "location": [100, 25]}
+  ],
+  "agents": [
+    {"id": "A1", "location": [5, 5]},
+    {"id": "A2", "location": [60, 60]},
+    {"id": "A3", "location": [95, 30]}
+  ],
+  "packages": [
+    {"id": "P1", "warehouse_id": "W1", "destination": [30, 40]},
+    {"id": "P2", "warehouse_id": "W2", "destination": [70, 90]},
+    {"id": "P3", "warehouse_id": "W3", "destination": [105, 20]},
+    {"id": "P4", "warehouse_id": "W1", "destination": [10, 10]},
+    {"id": "P5", "warehouse_id": "W2", "destination": [40, 80]}
+  ]
+}
+

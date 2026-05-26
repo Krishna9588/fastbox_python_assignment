@@ -1,0 +1,40 @@
+{
+  "A1": {
+    "packages_delivered": 0,
+    "packages": [],
+    "total_distance": 0.0,
+    "efficiency": 0.0,
+    "total_delay_minutes": 0
+  },
+  "A2": {
+    "packages_delivered": 2,
+    "packages": [
+      "P1",
+      "P4"
+    ],
+    "total_distance": 65.18,
+    "efficiency": 32.59,
+    "total_delay_minutes": 4
+  },
+  "A3": {
+    "packages_delivered": 3,
+    "packages": [
+      "P2",
+      "P3",
+      "P6"
+    ],
+    "total_distance": 41.92,
+    "efficiency": 13.97,
+    "total_delay_minutes": 0
+  },
+  "A4": {
+    "packages_delivered": 1,
+    "packages": [
+      "P5"
+    ],
+    "total_distance": 23.23,
+    "efficiency": 23.23,
+    "total_delay_minutes": 10
+  },
+  "best_agent": "A3"
+}
