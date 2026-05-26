@@ -7,6 +7,11 @@ Email: krishnabirla336@gmail.com
 Contact: +91 9588620228
 ```
 
+#### Project Setup
+```bash
+git pull https://github.com/Krishna9588/fastbox_python_assignment.git
+```
+---
 A Python logistics simulator for the company **FastBox**, built as part of the Nexgensis Technologies Python Developer assignment.
 
 ### Project Structure
@@ -163,7 +168,7 @@ The simulator accepts **two JSON formats** (both are supported automatically):
 ### Assumptions & Design Decisions
 
 1. Each package is assigned to the nearest agent by Euclidean distance from agent to warehouse.
-2. An agent groups packages by warehouse — one warehouse trip collects all packages from that location.
+2. An agent groups packages by warehouse one warehouse trip collects all packages from that location.
 3. Agents with zero deliveries are excluded from the best-agent calculation.
 4. Mid day join: the new agent only takes packages from a 2nd+ warehouse stop if it is closer to that warehouse than the original agent's mid-day position. This prevents pointless reassignments.
 5. Distances are rounded to 2 decimal places.
