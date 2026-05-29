@@ -4,7 +4,6 @@ Note: Assignment Round.
 ```
 Name: Krishna Birla
 Email: krishnabirla336@gmail.com
-Contact: +91 9588620228
 ```
 
 #### Project Setup
